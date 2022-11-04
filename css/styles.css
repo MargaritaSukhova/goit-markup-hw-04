@@ -2,6 +2,8 @@
     --main-background-color: #fff;
     --dark-background-color: #2F303A;
     --secondary-background-color: #F5F4FA;
+    --hero-backrgound-color: #C4C4C4;
+    --hero-gradient: rgba(47, 48, 58, 0.4);
     --main-text-color: #757575;
     --main-title-color: #212121;
     --accent-color: #2196F3;
@@ -10,6 +12,11 @@
     --sencondary-white-color: rgba(255, 255, 255, 0.6);
     --btn-active-color: #188CE8;
     --portfolio-card-border-color: #EEEEEE;
+    --feature-icon-bg: #F5F4FA;
+    --icon-main-color: #AFB1B8;
+    --icon-white-color: #fff;
+    --icon-footer-bg-color: rgba(255, 255, 255, 0.1);
+    --border-color: #AFB1B8;
     --indent: 30px;
     --items: 4;
 }
@@ -141,7 +148,8 @@ img {
 }
 
 .contact {
-    display: block;
+    display: flex;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
     font-weight: 500;
@@ -155,12 +163,22 @@ img {
     color: var(--accent-color);
 }
 
+.mail-icon, .phone-icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
 /* Hero*/
 
 .hero-section {
+    max-width: 1600px;
+    margin: 0 auto;
     padding-top: 200px;
     padding-bottom: 200px;
-    background-color: var(--dark-background-color);
+    background-color: var(--hero-backrgound-color);
+    background-image: linear-gradient(var(--hero-gradient), var(--hero-gradient)), url(../images/hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
     text-align: center;
 }
 
@@ -206,9 +224,19 @@ img {
     padding-bottom: 94px;
 }
 
+.features-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 120px;
+    background-color: var(--feature-icon-bg);
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
 .features-item {
     margin-bottom: 10px;
-
     font-weight: 700;
     font-size: 14px;
     line-height: calc(16 / 14);
@@ -270,10 +298,76 @@ img {
 }
 
 .team-postion {
+    margin-bottom: 16px;
     font-size: 16px;
     line-height: calc(19 / 16);
     text-align: center;
     letter-spacing: 0.03em;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--main-background-color);
+    color: var(--icon-main-color);
+}
+
+.socials-link:hover,
+.socials-link:focus {
+    background-color: var(--accent-color);
+    color: var(--icon-white-color);
+}
+
+.socials-icon {
+    fill: currentColor;
+}
+
+/*Clients*/
+
+.client-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.client-link {
+    display: block;
+    color: var(--icon-main-color)
+}
+
+.client-link:hover {
+    color: var(--accent-color);
+}
+
+.client-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    background-color: var(--main-background-color);
+    border-radius: 4px;
+    border: 1px solid var(--border-color)
+}
+
+.client-card:hover {
+    border: 1px solid var(--accent-color)
+}
+
+.client-icon {
+    fill: currentColor
 }
 /* Footer*/
 
@@ -281,6 +375,15 @@ img {
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: var(--dark-background-color);
+}
+
+.footer-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.contacts {
+    margin-right: 70px;
 }
 
 .logo-footer {
@@ -310,6 +413,36 @@ img {
     color: var(--accent-color)
 }
 
+.footer-title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16/14);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--main-white-color);
+}
+
+.footer-socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--icon-footer-bg-color);
+    color: var(--icon-white-color);
+}
+
+.footer-socials-link:hover,
+.footer-socials-link:focus {
+    background-color: var(--accent-color);
+    color: var(--icon-white-color);
+}
+
+.footer-socials-icon {
+    fill: currentColor;
+}
 /* ----------------Portfolio CSS------------------- */
 
 /* Filer */
@@ -343,6 +476,7 @@ img {
 .filter-btn:focus {
     color: var(--main-white-color);
     background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Portfolio */
@@ -352,6 +486,10 @@ img {
 
 .portfolio-card {
     background-color: var(--main-background-color);
+}
+
+.portfolio-card:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-wrapper {
