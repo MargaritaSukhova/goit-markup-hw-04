@@ -343,26 +343,20 @@ img {
 }
 
 .client-link {
-    display: block;
-    color: var(--icon-main-color)
-}
-
-.client-link:hover {
-    color: var(--accent-color);
-}
-
-.client-card {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 170px;
     height: 92px;
+    color: var(--icon-main-color)
     background-color: var(--main-background-color);
     border-radius: 4px;
     border: 1px solid var(--border-color)
 }
 
-.client-card:hover {
+.client-link:hover,
+.client-link:focus {
+    color: var(--accent-color);
     border: 1px solid var(--accent-color)
 }
 
@@ -414,6 +408,7 @@ img {
 }
 
 .footer-title {
+    display: inline-block;
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 14px;
